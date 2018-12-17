@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #  This script attempts to setup Linux Academy linux boxes for ansible
 #   put passwords on user and root accounts
 #   enable root login via ssh
@@ -29,7 +29,7 @@ echo ""
 # List of things to be configured on a new server
 # change user password
 echo -n "Change password for user?"
-read response
+read -r response
 if [ "$response" == "y" ]
   then
     echo "  Changing user password"
@@ -49,7 +49,7 @@ fi
 # uncomment line "PermitRootLogin yes"
 # then service sshd restart
 echo -n "Copy ssh key to user? y|<cr>"
-read response
+read -r response
 if [ "$response" == "y" ]
  then 
    echo "  Copy ssh to user..."
@@ -57,7 +57,7 @@ if [ "$response" == "y" ]
 fi
 
 echo -n "Copy ssh key to root? y|<cr>"
-read response
+read -r response
 if [ "$response" == "y" ]
   then 
     echo "  Copy ssh key to root..."
@@ -71,7 +71,7 @@ fi
 # add repo
 
 echo -n "Add repo? y|<cr>"
-read response
+read -r response
 if [ "$response" == "y" ]
   then 
     echo "  Adding repo..."
@@ -80,7 +80,7 @@ fi
 
 # update system
 echo -n "Start system update? y|<cr>"
-read response
+read -r response
 if [ "$response" == "y" ]
   then 
     echo "  Starting system update"
@@ -89,7 +89,7 @@ fi
 
 # install ansible
 echo -n "Install ansible? y|<cr>"
-read response
+read -r response
 if [ "$response" == "y" ]
   then 
     echo "  Installing ansible"
